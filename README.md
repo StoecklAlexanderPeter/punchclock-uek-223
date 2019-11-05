@@ -1,7 +1,7 @@
 # punchclock-uek-223
 
 ## What is a punch clock
-A ounch clock is used to record the time of people at work.
+A punch clock is used to record the time of people at work.
 
 ## Functions
 ### Included
