@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Punchclock</title>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <div class="row py-3">
+            <div class="col border-primary border-bottom">
+                <h1 class="text-center">Punchclock</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 text-center border-primary">
+                <h6 class="text-center py-3">Create Entry</h6>
+
+                <label>Check in</label>
+                <input class="form-control w-100 mb-3" type="datetime-local" id="checkin">
+            
+                <label>Check Out</label>
+                <input class="form-control w-100 mb-3" type="datetime-local" id="checkout">
+                <button class="btn btn-primary btn-block btn-sm text-center" onclick="createEntry()">create</button>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 text-center border-primary">
+                <h6 class="text-center py-3">Delete Entry</h6>
+                <label>Id</label>
+                <input class="form-control w-100 mb-3" type="number" id="id">
+                <button class="btn btn-primary btn-block btn-sm text-center" onclick="deleteEntry()">delete</button>
+            </div>
+            <div class="col-lg-2 col-md-12 col-sm-12 text-center border-primary">
+                <h6 class="text-center py-3">Entries</h6>
+                <div class="row text-center">
+                    <div id="response" class="col mb-3">
+                        
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block btn-sm" onclick="readEntries()">read</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
