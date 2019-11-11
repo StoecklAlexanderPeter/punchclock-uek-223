@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import ch.zli.m223.punchclock.domain.ApplicationUser;
 import ch.zli.m223.punchclock.repository.ApplicationUserRepository;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 @RestController
@@ -24,6 +26,12 @@ public class UserController {
         this.applicationUserRepository = applicationUserRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         this.userDetailsService = userDetailsService;
+    }
+    
+    @GetMapping("/read")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ApplicationUser> findAll() {
+        return userDetailsService.findAll();
     }
 
     @PostMapping("/sign-up")

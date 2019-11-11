@@ -15,6 +15,10 @@ public class ApplicationUser {
     @Column(nullable = false)
     private String password;
 
+    @OneToOne
+    @JoinColumn(nullable = true)
+    private Admin admin;
+
     @ManyToOne
     @JoinColumn(name="cid", nullable = true)
     private Company company;

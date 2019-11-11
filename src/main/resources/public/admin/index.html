@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Punchclock Admin</title>
-    <script src="admin.js"></script>
+    <script src="/users.js"></script>
+    <script src="/company.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css" type="text/css">
 </head>
 <body>
@@ -39,8 +40,56 @@
             <h6 class="text-center py-3">Create Company</h6>
             <label>Company Name</label>
             <input class="form-control" type="text" id="companyName">
+            <button class="btn btn-primary" onclick="createCompany(document.getElementById('companyName'))">Create Company</button>
         </div>
     </div>
 </div>
+
+<!-- Update User Modal -->
+<div class="modal fade" id="updateUser" tabindex="-1" role="dialog" aria-labelledby="updateUser" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row py-3">
+                        <h2>Update User</h2>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col">
+                            <label>Username</label>
+                            <input class="form-control" type="text" id="updateUser_username">
+                        </div>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col">
+                            <label>Company</label>
+                            <select class="form-control" type="text" id="updateUser_company">
+
+                            </select>
+                            <script>readCompany(document.getElementById('updateUser_company'))</script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="updateUser(document.getElementById('updateUser_username').value, document.getElementById('updateUser_company').value)">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script>
+    readUsers(document.getElementById("users"));
+</script>
 </body>
 </html>
