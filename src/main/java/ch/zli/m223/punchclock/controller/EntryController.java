@@ -18,7 +18,7 @@ public class EntryController {
         this.entryService = entryService;
     }
 
-    @GetMapping
+    @GetMapping("/read")
     @ResponseStatus(HttpStatus.OK)
     public List<Entry> getAllEntries() {
         return entryService.findAll();
@@ -37,5 +37,11 @@ public class EntryController {
     @ResponseStatus(HttpStatus.OK)
     public void deleteEntry(@Valid @RequestBody Entry entry) {
         entryService.deleteEntry(entry);
+    }
+
+    @PostMapping("/update")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateEntry(@Valid @RequestBody Entry entry) {
+        entryService.updateEntry(entry);
     }
 }

@@ -27,4 +27,8 @@ public class AdminService {
         adminRepository.deleteById(admin.getId());
     }
 
+    public void updateAdmin(Admin admin) {
+        adminRepository.save(admin);
+    }
+
 }

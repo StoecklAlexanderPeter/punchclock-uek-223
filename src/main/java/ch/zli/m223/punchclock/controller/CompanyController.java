@@ -18,22 +18,28 @@ public class CompanyController {
         this.companyService = companyService;
     }
 
-    @GetMapping
+    @GetMapping("/read")
     @ResponseStatus(HttpStatus.OK)
     public List<Company> getAllEntries() {
         return companyService.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public Company createCompany(@Valid @RequestBody Company company) {
         company.getCid();
         return companyService.createCompany(company);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
     @ResponseStatus(HttpStatus.OK)
     public void deleteCompany(@Valid @RequestBody Company company) {
         companyService.deleteCompany(company);
+    }
+
+    @PostMapping("/update")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateCompany(@Valid @RequestBody Company company) {
+        companyService.updateCompany(company);
     }
 }

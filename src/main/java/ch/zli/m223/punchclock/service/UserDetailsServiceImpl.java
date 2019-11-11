@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import ch.zli.m223.punchclock.domain.ApplicationUser;
 import ch.zli.m223.punchclock.repository.ApplicationUserRepository;
 
+import java.util.List;
+
 import static java.util.Collections.emptyList;
 
 @Service
@@ -26,5 +28,17 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
         return new User(applicationUser.getUsername(), applicationUser.getPassword(), emptyList());
+    }
+
+    public List<ApplicationUser> findAll() {
+        return applicationUserRepository.findAll();
+    }
+
+    public void deleteUser(ApplicationUser user) {
+        applicationUserRepository.deleteById(user.getUid());
+    }
+
+    public void updateUser(ApplicationUser user) {
+        applicationUserRepository.save(user);
     }
 }

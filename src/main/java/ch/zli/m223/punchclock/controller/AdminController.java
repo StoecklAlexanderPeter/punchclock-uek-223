@@ -18,22 +18,22 @@ public class AdminController {
         this.adminService = adminService;
     }
 
-    @GetMapping
+    @GetMapping("/read")
     @ResponseStatus(HttpStatus.OK)
     public List<Admin> getAllEntries() {
         return adminService.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public Admin createAdmin(@Valid @RequestBody Admin admin) {
         admin.getUser();
         return adminService.createAdmin(admin);
     }
 
-    @DeleteMapping
+    @PostMapping("/delete")
     @ResponseStatus(HttpStatus.OK)
     public void deleteAdmin(@Valid @RequestBody Admin admin) {
-        adminService.deleteAdmin(admin);
+        adminService.updateAdmin(admin);
     }
 }
