@@ -1,7 +1,7 @@
 # punchclock-uek-223
 
 ## What is a punch clock
-A punch clock is used to record the time of people at work.
+A punch clock allows employees to record time spent on tasks or projects.
 
 ## Functions
 ### Included
@@ -21,7 +21,3 @@ A punch clock is used to record the time of people at work.
 - delete admin
 - read admin
 - update admin
-
-### To Do
-- Frontend 
-- Change JWT Range so user can access some sites (DB, Login, Register)
