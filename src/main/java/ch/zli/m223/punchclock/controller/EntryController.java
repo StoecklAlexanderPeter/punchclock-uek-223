@@ -24,15 +24,16 @@ public class EntryController {
         return entryService.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public Entry createEntry(@Valid @RequestBody Entry entry) {
         entry.getCheckIn();
         entry.getCheckOut();
+        entry.getUser();
         return entryService.createEntry(entry);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
     @ResponseStatus(HttpStatus.OK)
     public void deleteEntry(@Valid @RequestBody Entry entry) {
         entryService.deleteEntry(entry);

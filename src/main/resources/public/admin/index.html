@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Punchclock Admin</title>
+    <script src="admin.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="row py-3">
+        <div class="col border-primary border-bottom">
+            <h1 class="text-center">Admin Dashboard</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12 text-center border-primary">
+            <h6 class="text-center py-3">User</h6>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Company</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="users">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12 text-center border-primary">
+            <h6 class="text-center py-3">Create Company</h6>
+            <label>Company Name</label>
+            <input class="form-control" type="text" id="companyName">
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,6 +1,7 @@
 package ch.zli.m223.punchclock.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class ApplicationUser {
@@ -14,8 +15,12 @@ public class ApplicationUser {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private Long companyid_fs;
+    @ManyToOne
+    @JoinColumn(name="cid", nullable = true)
+    private Company company;
+
+    @OneToMany
+    private List<Entry> entries;
 
     public Long getUid() {
         return uid;
@@ -41,11 +46,19 @@ public class ApplicationUser {
         this.password = password;
     }
 
-    public Long getCompanyid_fs() {
-        return companyid_fs;
+    public Company getCompany() {
+        return company;
     }
 
-    public void setCompanyid_fs(Long companyid_fs) {
-        this.companyid_fs = companyid_fs;
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    public List<Entry> getEntries() {
+        return entries;
+    }
+
+    public void setEntries(List<Entry> entries) {
+        this.entries = entries;
     }
 }

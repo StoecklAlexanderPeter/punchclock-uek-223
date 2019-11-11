@@ -7,6 +7,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Company {
@@ -17,6 +18,9 @@ public class Company {
 
     @Column(nullable = false)
     private String name;
+
+    @OneToMany
+    private List<ApplicationUser> user;
 
     public Long getCid() {
         return cid;
@@ -32,5 +36,13 @@ public class Company {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<ApplicationUser> getUser() {
+        return user;
+    }
+
+    public void setUser(List<ApplicationUser> user) {
+        this.user = user;
     }
 }

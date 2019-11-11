@@ -27,7 +27,7 @@ public class AdminController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Admin createAdmin(@Valid @RequestBody Admin admin) {
-        admin.getUid();
+        admin.getUser();
         return adminService.createAdmin(admin);
     }
 

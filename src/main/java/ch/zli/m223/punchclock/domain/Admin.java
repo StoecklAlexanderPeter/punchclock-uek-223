@@ -15,8 +15,9 @@ public class Admin {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private Long uid;
+    @OneToOne
+    @JoinColumn(name="uid", nullable = false)
+    private ApplicationUser user;
 
     public Long getId() {
         return id;
@@ -26,11 +27,11 @@ public class Admin {
         this.id = id;
     }
 
-    public Long getUid() {
-        return uid;
+    public ApplicationUser getUser() {
+        return user;
     }
 
-    public void setUid(Long uid) {
-        this.uid = uid;
+    public void setUser(ApplicationUser user) {
+        this.user = user;
     }
 }
